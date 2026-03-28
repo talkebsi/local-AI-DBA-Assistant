@@ -42,7 +42,12 @@ Show me the size of each database on my instance?
 ```
 
 The local AI reads your question, writes the correct T-SQL, executes it against your SQL Server through a secure read-only connection, and returns the results explained in plain English — all without touching the internet.
+## Security
 
+- All processing is local (no cloud APIs)
+- Uses a read-only SQL login
+- MCP enforces controlled query execution
+- No data leaves the machine
 ---
 
 ## Architecture Overview
@@ -65,12 +70,6 @@ The local AI reads your question, writes the correct T-SQL, executes it against 
 
 ---
 
-## 🔐 Security
-
-- All processing is local (no cloud APIs)
-- Uses a read-only SQL login
-- MCP enforces controlled query execution
-- No data leaves the machine
 
 ## Prerequisites
 
