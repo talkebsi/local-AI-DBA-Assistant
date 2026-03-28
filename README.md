@@ -47,13 +47,11 @@ The local AI reads your question, writes the correct T-SQL, executes it against 
 
 ## Architecture Overview
 
-```
-images/mcp_sql_project_overview (1).svg
+![Architecture Overview](images/mcp_sql_project_overview.svg)
 
-```
 ## How Llama Works Inside the Setup
-```
-images/llama_role_in_mcp (1).svg
+
+![Llama Flow](images/llama_role_in_mcp.svg)
 
 ```
 ### How Each Component Fits Together
