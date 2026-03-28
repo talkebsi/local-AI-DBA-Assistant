@@ -65,6 +65,13 @@ The local AI reads your question, writes the correct T-SQL, executes it against 
 
 ---
 
+## 🔐 Security
+
+- All processing is local (no cloud APIs)
+- Uses a read-only SQL login
+- MCP enforces controlled query execution
+- No data leaves the machine
+
 ## Prerequisites
 
 Before starting, make sure you have:
