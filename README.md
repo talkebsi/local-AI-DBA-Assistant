@@ -53,8 +53,6 @@ The local AI reads your question, writes the correct T-SQL, executes it against 
 
 ![Llama Flow](images/llama_role_in_mcp.svg)
 
-```
----
 ### How Each Component Fits Together
 
 | Component | Role | Why It's Needed |
@@ -114,6 +112,15 @@ dotnet build --configuration Release
 
 When it finishes you should see `Build succeeded`. Verify the DLL was created:
 
+```bash
+dir "C:\Users\YourName\mssql-mcp\src\MSSQL.MCP\bin\Release\net9.0\MSSQL.MCP.dll"
+```
+
+If the file appears with a size — the bridge is built ✅
+
+> **Note:** If you see only a `Debug` folder and no `Release` folder, re-run the build with `--configuration Release` explicitly.
+
+---
 
 ## Step 3 — Install Ollama and Pull the Model
 
@@ -143,14 +150,20 @@ ollama list
 
 You should see `llama3.2:3b` in the list ✅
 
-**You may use any model you prefer, as long as your device can handle it**
+**You may use any model you prefer, as long as your device can handle it.**
 
 ### Why Llama 3.2 3B?
 
-I chosed Llama 3.2 3B because it runs efficiently on a my laptop without consuming excessive resources.  
-It provides reliable tool-calling support for MCP/Agent workflows while maintaining fast response times.  
+I chose Llama 3.2 3B because it runs efficiently on my laptop without consuming excessive resources.
+It provides reliable tool-calling support for MCP/Agent workflows while maintaining fast response times.
 This makes it ideal for a lightweight, fully local SQL Server DBA assistant.
 
+### Model Recommendations by Machine
+
+| Model | Tool Calling | RAM Usage | Response Speed |
+|---|---|---|---|
+| `llama3.2:3b` ✅ **Recommended** | Excellent | ~2GB | Fast (~30-60 sec on CPU) |
+| `llama3.1:8b` | Excellent | ~5GB | Moderate (~2-3 min on CPU) |
 
 ---
 
@@ -219,12 +232,14 @@ echo %MSSQL_CONNECTION_STRING%
 It should print your full connection string ✅
 
 
+---
+
 ## Step 6 — Install VS Code and Continue.dev
 
 1. Open VS Code
 2. Click the **Extensions icon** in the left sidebar (4 squares)
 3. Search for `Continue`
-4. Install the extension by **Continue.dev** 
+4. Install the extension by **Continue.dev**
 5. After install, a **C icon** appears in your left sidebar
 
 ---
@@ -249,6 +264,7 @@ models:
   - name: Llama 3.2 3B
     provider: ollama
     model: llama3.2:3b
+    # Critical for smaller models to enable Agent Mode tool calling
     capabilities:
       - tool_use
     system_prompt: >
@@ -381,8 +397,6 @@ The AI should call `ListTables` directly and return your real table names — no
 
 ---
 
-
-
 ## Example DBA Questions to Ask
 
 Once your setup is working, try these:
@@ -417,12 +431,10 @@ List all logins with sysadmin privileges
 Show me all users in my database and their roles
 ```
 
-
 ---
 
 ## Security Notes
 
->
 - The `mcp_readonly` login can only SELECT — it cannot INSERT, UPDATE, DELETE, DROP, or ALTER anything
 - `VIEW SERVER STATE` permission is granted to allow DMV queries for performance tuning — this is read-only access to server state information
 - Never use `sa` or a sysadmin account for the MCP connection
@@ -438,7 +450,6 @@ Show me all users in my database and their roles
 - [Ollama model library](https://ollama.com/library)
 - [SQL Server DMV reference](https://docs.microsoft.com/en-us/sql/relational-databases/system-dynamic-management-views)
 - [Original blog post inspiration — SQL Authority by Pinal Dave](https://blog.sqlauthority.com/2025/10/27/sql-server-and-ai-setting-up-an-mcp-server-for-natural-language-tuning/)
-
 
 ---
 
