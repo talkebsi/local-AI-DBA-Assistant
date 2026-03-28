@@ -8,24 +8,31 @@ A fully local AI-powered DBA assistant that lets you query SQL Server using plai
 
 ## 📋 Table of Contents
 
-- [What This Project Does](#what-this-project-does)
+## 📑 Table of Contents
+
+- [What This Setup Does](#what-this-setup-does)
+- [Why This Project Matters](#why-this-project-matters)
+- [Security](#security)
 - [Architecture Overview](#architecture-overview)
+- [How Llama Works Inside the Setup](#how-llama-works-inside-the-setup)
+
 - [Prerequisites](#prerequisites)
 - [Step 1 — Install .NET 9 SDK](#step-1--install-net-9-sdk)
 - [Step 2 — Clone and Build the MCP Bridge](#step-2--clone-and-build-the-mcp-bridge)
 - [Step 3 — Install Ollama and Pull the Model](#step-3--install-ollama-and-pull-the-model)
 - [Step 4 — Create a Read-Only SQL Server Login](#step-4--create-a-read-only-sql-server-login)
 - [Step 5 — Set the Connection String](#step-5--set-the-connection-string)
-- [Step 6 — Install VS Code and Continue.dev](#step-6--install-vs-code-and-continuedev)
-- [Step 7 — Configure Continue.dev](#step-7--configure-continuedev)
+- [Step 6 — Install VS Code and Continue.dev](#step-6--install-vs-code-and-continuedotdev)
+- [Step 7 — Configure Continue.dev](#step-7--configure-continuedotdev)
 - [Step 8 — Test the Bridge Manually](#step-8--test-the-bridge-manually)
 - [Step 9 — Test in VS Code](#step-9--test-in-vs-code)
+
 - [Example DBA Questions to Ask](#example-dba-questions-to-ask)
 - [Security Notes](#security-notes)
 
 ---
 
-## What This Project Does
+## What This Setup Does
 
 Instead of writing T-SQL manually, you type plain English questions in VS Code:
 
@@ -49,7 +56,7 @@ The local AI reads your question, writes the correct T-SQL, executes it against 
 - MCP enforces controlled query execution
 - No data leaves the machine
 ---
-## Why This Project Matters?
+## Why This Project Matters
 
 This project demonstrates how AI can assist DBAs in:
 
