@@ -8,8 +8,6 @@ A fully local AI-powered DBA assistant that lets you query SQL Server using plai
 
 ## 📋 Table of Contents
 
-## 📑 Table of Contents
-
 - [What This Setup Does](#what-this-setup-does)
 - [Why This Project Matters](#why-this-project-matters)
 - [Security](#security)
@@ -22,11 +20,10 @@ A fully local AI-powered DBA assistant that lets you query SQL Server using plai
 - [Step 3 — Install Ollama and Pull the Model](#step-3--install-ollama-and-pull-the-model)
 - [Step 4 — Create a Read-Only SQL Server Login](#step-4--create-a-read-only-sql-server-login)
 - [Step 5 — Set the Connection String](#step-5--set-the-connection-string)
-- [Step 6 — Install VS Code and Continue.dev](#step-6--install-vs-code-and-continuedotdev)
-- [Step 7 — Configure Continue.dev](#step-7--configure-continuedotdev)
+- [Step 6 — Install VS Code and Continue.dev](#step-6--install-vs-code-and-continuedev)
+- [Step 7 — Configure Continue.dev](#step-7--configure-continuedev)
 - [Step 8 — Test the Bridge Manually](#step-8--test-the-bridge-manually)
 - [Step 9 — Test in VS Code](#step-9--test-in-vs-code)
-
 - [Example DBA Questions to Ask](#example-dba-questions-to-ask)
 - [Security Notes](#security-notes)
 
