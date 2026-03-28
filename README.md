@@ -49,6 +49,20 @@ The local AI reads your question, writes the correct T-SQL, executes it against 
 - MCP enforces controlled query execution
 - No data leaves the machine
 ---
+## Why This Project Matters?
+
+This project demonstrates how AI can assist DBAs in:
+
+- Translating natural language into accurate SQL queries  
+- Query optimization and tuning complex T-SQL statements  
+- Performance troubleshooting using DMVs and real-time diagnostics  
+- Learning SQL Server internals through interactive exploration  
+- Automating repetitive DBA tasks and investigations  
+- Reducing time to diagnose issues like blocking, waits, and resource bottlenecks  
+- Providing a safe, read-only environment for experimentation and learning  
+- Enabling self-service data exploration without deep SQL knowledge  
+
+It bridges the gap between traditional DBA skills and modern AI-assisted workflows — all in a fully private, local environment.
 
 ## Architecture Overview
 
