@@ -54,6 +54,7 @@ The local AI reads your question, writes the correct T-SQL, executes it against 
 ![Llama Flow](images/llama_role_in_mcp.svg)
 
 ```
+---
 ### How Each Component Fits Together
 
 | Component | Role | Why It's Needed |
